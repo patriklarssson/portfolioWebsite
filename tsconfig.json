@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "esnext",
+		"jsx": "react",
+		"experimentalDecorators": true,
+		"baseUrl": "./src",
+		"paths": {
+			"~/*": ["./*"]
+		},
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+	},
+	"include": [
+		"src/*",
+		"src/**/*",
+	],
+
+}
