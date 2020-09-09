@@ -6,6 +6,26 @@ import { observer } from 'mobx-react-lite'
 import { FlexContainer, FlexContent } from '~/layout'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import ExpandableBox from '~/components/ExpandableBox'
+import Socials from '~/models/Socials'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
+const socials: Socials[] = [
+    {
+        name: 'Linkedin',
+        css: 'linear-gradient(to top, #FAFBFC 0%, #2B3137 100%)',
+        icon: <LinkedInIcon onClick={() => window.open("https://www.linkedin.com/in/patrik-larsson-0b7369128/", "_blank")} style={{ color: "#0077B5", width: "100%", height: "100%" }} />,
+        height: 200,
+        description: "hasdu as d sad sadk ad"
+    },
+    {
+        name: 'Github',
+        css: 'linear-gradient(to top, #FAFBFC 0%, #2B3137 100%)',
+        icon: <GitHubIcon onClick={() => window.open("https://github.com/patriklarssson", "_blank")} style={{ color: "black", width: "100%", height: "100%" }} />,
+        height: 200,
+        description: "hasdu as d sad sadk ad"
+    },
+]
 
 const useStyles = makeStyles((theme: Theme) => {
     return {
@@ -17,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) => {
     }
 })
 
-export default observer(() => {
+export default observer((props: { openBox?: string }) => {
     const classes = useStyles()
 
     return (
@@ -59,7 +79,13 @@ export default observer(() => {
                 </FlexContainer>
             </FlexContainer> */}
 
-            <ExpandableBox />
+            <ExpandableBox
+                openBox={props.openBox}
+                data={socials}
+                columns={2}
+                height={400}
+                margin={50}
+            />
 
 
         </div >

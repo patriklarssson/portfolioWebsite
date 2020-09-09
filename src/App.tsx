@@ -23,10 +23,21 @@ const useStyles = makeStyles((theme: Theme) => {
 export default (() => {
     const classes = useStyles()
 
+    const HomePage = () => {
+        return <Home />
+    }
+    const GithubPage = () => {
+        return <Home openBox="Github" />
+    }
+    const LinkedinPage = () => {
+        return <Home openBox="Linkedin" />
+    }
+
     return (                
                 <Router>
-                    <Route exact path='/' component={Home} />
-                    <Route path='/test' component={Test} />
+                    <Route exact path='/' component={HomePage} />
+                    <Route path='/github' component={GithubPage} />
+                    <Route path='/linkedin' component={LinkedinPage} />
                 </Router>
     )
 })
